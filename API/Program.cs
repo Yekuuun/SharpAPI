@@ -1,3 +1,6 @@
+using SharpApi.Repository;
+using SharpApi.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -13,6 +16,9 @@ builder.Services.AddControllers();
 //AUTO MAPPER
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
+//SERVICES
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<UserRepository>();
 
 var app = builder.Build();
 

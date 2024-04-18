@@ -3,6 +3,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+obj/*
 
 # User-specific files
 *.rsuser
@@ -10,10 +11,6 @@
 *.user
 *.userosscache
 *.sln.docstates
-
-API/obj/Debug/net8.0/api.AssemblyInfoInputs.cache
-API/obj/Debug/net8.0/api.AssemblyInfo.cs
-API/obj/Debug/net8.0/api.AssemblyInfo.cs
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
