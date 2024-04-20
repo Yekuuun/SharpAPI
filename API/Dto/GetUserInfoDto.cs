@@ -1,9 +1,9 @@
 namespace SharpApi.Dtos;
 
-public class GetUserInfosDto
+public class GetUserInfosDto(int id, string email, string name, string firstname)
 {
-    public int Id { get; set; }
-    public string Email { get; set; } = string.Empty;
-    public string Name { get; set; } = string.Empty;
-    public string FirstName { get; set; } = string.Empty;
+    public int Id { get; set; } = id;
+    public string Email { get; set; } = email;
+    public string Name { get; set; } = name;
+    public string FirstName { get; set; } = firstname;
 }

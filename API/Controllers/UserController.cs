@@ -31,6 +31,14 @@ public class UserController(IUserService userService) : ControllerBase
         return result;
     }
 
+    [HttpGet("users/{page}")]
+    public async Task<ActionResult<ServiceResponse<BasePaginationResponseDto<GetUserInfosDto>>>> GetUserWithPagination(int page)
+    {
+        ServiceResponse<BasePaginationResponseDto<GetUserInfosDto>> response = await _userService.GetUsersWithPagination(page);
+        ActionResult<ServiceResponse<BasePaginationResponseDto<GetUserInfosDto>>> result = await ResponseManager.GetResponse(response);
+        return result;
+    }
+
     /// <summary>
     /// Adding a new user to Database
     /// </summary>

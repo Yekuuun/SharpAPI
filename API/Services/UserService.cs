@@ -1,5 +1,6 @@
 
 using AutoMapper;
+using Azure;
 using SharpApi.Repository;
 
 namespace SharpApi.Service;
@@ -81,8 +82,30 @@ public class UserService(IMapper mapper, UserRepository userRepository, DataCont
             int total_users = await _context.Users.CountAsync();
 
             //list of users
+            int total_pages = (int)Math.Ceiling((double)total_users / batch_size);
+
+            if(page > total_pages)
+            {
+                return ErrorManager.ReturnError<BasePaginationResponseDto<GetUserInfosDto>>(EErrorType.BAD, "page out of range");
+            }
+
+            List<GetUserInfosDto> users = await _context.Users
+                .OrderBy(u => u.Id)
+                .Skip((page - 1) * batch_size)
+                .Take(batch_size)
+                .Select(u => new GetUserInfosDto(u.Id, u.UserName, u.Name, u.Firstname))
+                .ToListAsync();
             
-            
+            BasePaginationResponseDto<GetUserInfosDto> result = new()
+            {
+                Elements = users,
+                TotalPages = total_pages,
+                BatchSize = batch_size,
+                Page = page
+            };
+
+            response.Data = result;
+            return response;
         }
         catch(Exception ex)
         {
