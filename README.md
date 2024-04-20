@@ -1,5 +1,16 @@
-# BaseAPI
-BaseAPI is a simple and easy-to-use pre-built ASP.NET Core web API using clean architecture. Unlike other base clean architecture projects, I've decided to develop additional features to help you build fast and robust web APIs using .NET 8.
+```                
+               ________  ___  ___  ________  ________  ________  ________  ________  ___     
+              |\   ____\|\  \|\  \|\   __  \|\   __  \|\   __  \|\   __  \|\   __  \|\  \    
+              \ \  \___|\ \  \\\  \ \  \|\  \ \  \|\  \ \  \|\  \ \  \|\  \ \  \|\  \ \  \   
+               \ \_____  \ \   __  \ \   __  \ \   _  _\ \   ____\ \   __  \ \   ____\ \  \  
+                \|____|\  \ \  \ \  \ \  \ \  \ \  \\  \\ \  \___|\ \  \ \  \ \  \___|\ \  \ 
+                  ____\_\  \ \__\ \__\ \__\ \__\ \__\\ _\\ \__\    \ \__\ \__\ \__\    \ \__\
+                 |\_________\|__|\|__|\|__|\|__|\|__|\|__|\|__|     \|__|\|__|\|__|     \|__|
+                 \|_________|                                                                
+```
+
+
+**SharpAPI** is a simple and easy-to-use pre-built ASP.NET Core web API using clean architecture. Unlike other base clean architecture projects, I've decided to develop additional features to help you build fast and robust web APIs using .NET 8.
 
 This project includes a base user service application for managing users.
 
@@ -41,4 +52,11 @@ this project use to following dependencies :
 **Note :**
 Make sure Entity Framework is installed on your local machine. Install it :
 `dotnet tool install --global dotnet-ef`
+
+---
+
+<img
+  src="https://github.com/Yekuuun/SharpAPI/blob/main/src/dotnet-api-swagger.png?raw=true"
+  alt="DebugInfo" />
+
 
