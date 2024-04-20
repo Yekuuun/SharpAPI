@@ -45,7 +45,7 @@ public class UserController(IUserService userService) : ControllerBase
     /// <param name="user"></param>
     /// <returns></returns>
     [HttpPost("")]
-    public async Task<ActionResult<ServiceResponse<GetUserInfosDto>>> AddUser(User user)
+    public async Task<ActionResult<ServiceResponse<GetUserInfosDto>>> AddUser(AddUserDto user)
     {
         ServiceResponse<GetUserInfosDto> response = await _userService.AddUser(user);
         ActionResult<ServiceResponse<GetUserInfosDto>> result = await ResponseManager.GetResponse(response);

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Localization;
 using SharpApi.Repository;
 using SharpApi.Service;
 
@@ -7,7 +8,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("UserDB")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("USERS")));
+
+// Dans la méthode ConfigureServices
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new RequestCulture("fr-FR");
+});
 
 // Add services to the container.
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);

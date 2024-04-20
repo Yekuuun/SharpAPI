@@ -11,12 +11,13 @@ public class UserService(IMapper mapper, UserRepository userRepository, DataCont
     private readonly UserRepository _userRepository = userRepository;
     private readonly DataContext _context = context;
 
-    public async Task<ServiceResponse<GetUserInfosDto>> AddUser(User user)
+    public async Task<ServiceResponse<GetUserInfosDto>> AddUser(AddUserDto user)
     {
         ServiceResponse<GetUserInfosDto> response = new();
         try
         {
-            User new_user = await _userRepository.InsertEntity(user);
+            User mapped_user = _mapper.Map<User>(user);
+            User new_user = await _userRepository.InsertEntity(mapped_user);
             response.Data = _mapper.Map<GetUserInfosDto>(new_user);
             return response;
         }

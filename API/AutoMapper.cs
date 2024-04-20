@@ -8,5 +8,6 @@ public class AutoMapper : Profile
     {
         //SOURCE -> DESTINATION
         _ = CreateMap<User, GetUserInfosDto>();
+        _ = CreateMap<AddUserDto, User>();
     }
 }
