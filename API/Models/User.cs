@@ -21,14 +21,6 @@ public class User : BaseEntityId
     [Required]
     public string Email { get; set;} = string.Empty;
 
-    [Column("password_hash")]
-    [Required]
-    public byte[] PasswordHash { get; set;} = [];
-
-    [Column("password_salt")]
-    [Required]
-    public byte[] PasswordSalt {get; set;} = [];
-
     [Column("firstname")]
     [MaxLength(50)]
     [Required]

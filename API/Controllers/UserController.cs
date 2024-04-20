@@ -30,4 +30,30 @@ public class UserController(IUserService userService) : ControllerBase
         ActionResult<ServiceResponse<GetUserInfosDto>> result = await ResponseManager.GetResponse(response);
         return result;
     }
+
+    /// <summary>
+    /// Adding a new user to Database
+    /// </summary>
+    /// <param name="user"></param>
+    /// <returns></returns>
+    [HttpPost("")]
+    public async Task<ActionResult<ServiceResponse<GetUserInfosDto>>> AddUser(User user)
+    {
+        ServiceResponse<GetUserInfosDto> response = await _userService.AddUser(user);
+        ActionResult<ServiceResponse<GetUserInfosDto>> result = await ResponseManager.GetResponse(response);
+        return result;
+    }
+
+    /// <summary>
+    /// Update single user informations.
+    /// </summary>
+    /// <param name="update_infos"></param>
+    /// <returns></returns>
+    [HttpPut("")]
+    public async Task<ActionResult<ServiceResponse<UpdateUserDto>>> UpdateUser(UpdateUserDto update_infos)
+    {
+        ServiceResponse<UpdateUserDto> response = await _userService.UpdateUser(update_infos);
+        ActionResult<ServiceResponse<UpdateUserDto>> result = await ResponseManager.GetResponse(response);
+        return result;
+    }
 }
