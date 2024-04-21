@@ -47,7 +47,8 @@ this project use to following dependencies :
 ## Launching project : 
 1. clone project on your local machine with `git clone https://github.com/Yekuuun/SharpAPI.git`
 2. go to `/api` and use `dotnet restore`
-3. launch application using `dotnet watch run`
+3. update database with `dotnet ef database update`
+4. launch application using `dotnet watch run`
 
 **Note :**
 Make sure Entity Framework is installed on your local machine. Install it :
