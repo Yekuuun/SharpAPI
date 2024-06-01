@@ -13,7 +13,6 @@ public class UserController(IUserService userService) : ControllerBase
     [HttpGet("")]
     public async Task<ActionResult<ServiceResponse<List<GetUserInfosDto>>>> GetAllUsers()
     {
-        Console.WriteLine("test");
         ServiceResponse<List<GetUserInfosDto>> response = await _userService.GetAllUsers();
         ActionResult<ServiceResponse<List<GetUserInfosDto>>> result = await ResponseManager.GetResponse(response);
         return result;
@@ -27,7 +26,6 @@ public class UserController(IUserService userService) : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<ServiceResponse<GetUserInfosDto>>> GetUserById(int id)
     {
-        Console.WriteLine("test");
         ServiceResponse<GetUserInfosDto> response = await _userService.GetUserById(id);
         ActionResult<ServiceResponse<GetUserInfosDto>> result = await ResponseManager.GetResponse(response);
         return result;
