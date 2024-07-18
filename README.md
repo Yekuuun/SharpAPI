@@ -10,7 +10,7 @@
 ```
 
 
-**SharpAPI** is a simple and easy-to-use pre-built ASP.NET Core web API using clean architecture. Unlike other base clean architecture projects, I've decided to develop additional features to help you build fast and robust web APIs using .NET 8.
+**SharpAPI** is a simple and easy-to-use pre-built ASP.NET Core web API using .NET8 & additionnal cool features.
 
 This project includes a base user service application for managing users.
 
