@@ -32,7 +32,6 @@ public class UserService(IMapper mapper, UserRepository userRepository, DataCont
         ServiceResponse<List<GetUserInfosDto>> response = new();
         try
         {
-            Console.WriteLine("testest");
             List<User> users = await _userRepository.GetAll();
 
             if(users.Count == 0)
